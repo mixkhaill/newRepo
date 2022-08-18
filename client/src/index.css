@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto&family=Space+Mono:wght@400;700&display=swap');
+
+
+body{
+  font-family: Roboto !important;
+  /* background-color: rgb(35,35,35) !important; */
+}
+.pointer {
+  cursor: pointer;
+}
+.ant-modal-footer {
+  display: none;
+}
+.ant-select-selector {
+  height: 50px !important;
+}
+.ant-select-selection-placeholder,
+.ant-select-selection-item{
+  margin-top: 5px;
+}
+.btn-square {
+  border-radius: 0;
+}
+/* .nav-link.active{
+  background-color: #0d6efd !important;
+  color: white !important;
+  font-weight: bold;
+} */

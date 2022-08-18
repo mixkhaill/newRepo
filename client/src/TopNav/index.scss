@@ -1,0 +1,79 @@
+@import '../styles/variables.scss';
+
+.main{
+    
+    justify-content: space-between;
+    background-color: $color-background;
+    z-index: 99;
+    .headerNav{
+        font-weight: 500;
+        font-size: 32px;
+        font-family: oswald;
+        line-height: 21px;
+        background-color: $color-background;
+        width: 100%;
+        a{
+        color: $color-main;
+        }
+    }
+    .burger{
+        display: none;
+        color: $color-main;
+        font-size: 32px;
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+        left: 0;
+    }
+    .xmark{
+        display: none;
+        color: $color-main;
+        font-size: 42px;
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        z-index: 10;
+    }
+}
+@media screen and (max-width: $breakpoint-m) {
+    .main{
+        .headerNav{
+            position: absolute;
+            transform: translateX(-100%);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            a{
+                margin-bottom: 10px;
+                padding-bottom: 20px;
+            }
+        }
+        .burger{
+            display: block;
+        }
+        &.open{
+            .burger{
+                display: none;
+                transition: .5s;
+            }
+            .xmark{
+                display: block;
+            }
+            .headerNav{
+                position: relative;
+                transform: translateX(0);
+                transition: .5s;
+            }
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .main{
+        .headerNav{
+            a{
+                padding: 30px;
+            }
+        }
+    }
+}
