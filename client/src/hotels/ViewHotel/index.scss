@@ -1,5 +1,47 @@
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .view-hotel{
     background-color: $color-background;
+}
+.hotel-image{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    img{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        height: initial;
+        max-height: initial;
+        width: 100%;
+    }
+    h2{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        font-weight: 300;
+        font-size: 80px;
+        font-family: oswald;
+    }
+}
+@media screen and (max-width: 610px) {
+    .hotel-image{
+        height: 400px;
+        img{
+            width: initial;
+            max-width: initial;
+            height: 100%;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .hotel-image{
+        height: 600px;
+        h2{
+            font-size: 112px;
+        }
+    }
 }

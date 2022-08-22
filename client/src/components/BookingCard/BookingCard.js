@@ -40,18 +40,21 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
               </h3>
               <p className="alert alert-info">{hotel.location}</p>
               <p className="card-text">{`${hotel.description.substring(
-                1,
+                0,
                 200
               )}...`}</p>
               <p className="card-text">
                 <span className="float-right text-primary">
-                  for {diffDays(hotel.from, hotel.to)}{" "}
-                  {diffDays(hotel.from, hotel.to) <= 1 ? " day" : " days"}
+                  na {diffDays(hotel.from, hotel.to)}{" "}
+                  {diffDays(hotel.from, hotel.to) <= 1 ? " dzień" : " dni"}
                 </span>
               </p>
-              <p className="card-text">{hotel.bed} bed</p>
+              <p className="card-text">{hotel.types <= 1 ? "pies" : "kot"} </p>
               <p className="card-text">
-                Available from {new Date(hotel.from).toLocaleDateString()}
+                od {new Date(hotel.from).toLocaleDateString()}
+              </p>
+              <p className="card-text">
+                do {new Date(hotel.to).toLocaleDateString()}
               </p>
 
               {showModal && (

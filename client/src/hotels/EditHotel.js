@@ -38,7 +38,7 @@ const EditHotel = ({match}) => {
         try{
             let res = await updateHotel(token, hotelData, match.params.hotelId)
             console.log('Hotel update', res);
-            toast.success(`${res.data.title} is updated`);
+            toast.success(`${res.data.title} aktualizowany`);
         } catch(err) {
             console.log(err);
             toast.error(err.response.data.err);
@@ -66,17 +66,15 @@ const EditHotel = ({match}) => {
     
     return(
         <>
-        <div className="container-fluid bg-secondary p-5 text-center">
-        <h2>Edit Hotel</h2>
+        <div className="image-prev">
+        <img 
+        src={preview} 
+        alt="prew-img"  
+        />
         </div>
         <div className="container-fluid">
             <div className="row">
                 <div className="row">
-                    <br/>
-                    <img 
-                    src={preview} 
-                    alt="prew-img"  
-                    className="img img-fluid m2"/>
                     <HotelEditForm
                     values={values}
                     setValues={setValues}

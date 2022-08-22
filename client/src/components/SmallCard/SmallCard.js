@@ -54,7 +54,7 @@ const SmallCard = ({
                     onClick={() => history.push(`/hotel/${h._id}`)}
                     className="btn"
                   >
-                    Show more
+                    Zobacz więcej
                   </button>
                 )}
                 {owner && (

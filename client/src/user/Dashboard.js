@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { userHotelBookings } from "../actions/hotel";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import BookingCard from "../components/cards/BookingCard";
+import BookingCard from "../components/BookingCard/BookingCard";
 
 const Dashboard = () => {
   const {
@@ -35,11 +35,11 @@ const Dashboard = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-10">
-            <h2>Your Bookings</h2>
+            <h2>Twoje zamówienia</h2>
           </div>
           <div className="col-md-2">
             <Link to="/" className="btn btn-primary">
-              Browse Hotels
+              Strona główna
             </Link>
           </div>
         </div>

@@ -7,3 +7,32 @@
 .search{
     background-color: $color-background;
 }
+.banner-image{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    img{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        height: initial;
+        max-height: initial;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 610px) {
+    .banner-image{
+        height: 400px;
+        img{
+            width: initial;
+            max-width: initial;
+            height: 100%;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .banner-image{
+        height: 600px;
+    }
+}

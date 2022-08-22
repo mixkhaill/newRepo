@@ -8,6 +8,10 @@ import {loadStripe} from '@stripe/stripe-js';
 import {toast} from 'react-toastify'
 import moment from 'moment'
 import HotelBookingDate from '../../components/forms/HotelBookingDate'
+import dog from "../../assets/dog.jpg"
+import cat from "../../assets/cat.jpg"
+
+import "./index.scss"
 
 
 const ViewHotel = ({match, history}) => {
@@ -72,10 +76,13 @@ const ViewHotel = ({match, history}) => {
         })
         .then((result) => console.log(result));
     };
+    const bannerImage = hotel.types === "1" ? dog : cat
+    console.log("img", bannerImage)
 
     return(
         <>
-        <div className="container-fluid bg-secondary p-5 text-center">
+        <div className="hotel-image">
+            <img src={bannerImage} alt="header"/>
         <h2>{hotel.title}</h2>
         </div>
         <div className="container-fluid view-hotel">
@@ -94,6 +101,7 @@ const ViewHotel = ({match, history}) => {
                     currency: "pln",
                   })} za dobę</p>
                 <i>Posted by {hotel.postedBy && hotel.postedBy.name}</i>
+                <p className="type">{hotel.types <=1 ? "pies" : "kot"}</p>
                 <br/>
                 <HotelBookingDate
                     values={values}
@@ -102,7 +110,7 @@ const ViewHotel = ({match, history}) => {
                     handleSubmit={handleSubmit}
                     />
                 <button onClick={handleClick} className='btn btn-block btn-lg btn-primary mt-3 mb-3' disabled={loading}>
-                    {loading ? "Loading..." : auth && auth.token ? 'Book now' : "Login now"}</button>
+                    {loading ? "ładowanie" : auth && auth.token ? 'Zarezerwuj' : "Zaloguj się"}</button>
                 </div>
             </div>
         </div>

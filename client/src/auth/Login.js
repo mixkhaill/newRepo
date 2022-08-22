@@ -12,13 +12,13 @@ const Login = ({ history }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("SEND LOGIN DATA", { email, password });
+    console.log({ email, password });
     try {
       let res = await login({ email, password });
 
       if (res.data) {
         console.log(
-          "SAVE USER RES IN REDUX AND LOCAL STORAGE THEN REDIRECT ===> "
+          "===> "
         );
         window.localStorage.setItem("auth", JSON.stringify(res.data));
         dispatch({

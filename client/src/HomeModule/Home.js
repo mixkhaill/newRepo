@@ -3,6 +3,7 @@ import {allHotels} from '../actions/hotel'
 import SmallCard from '../components/SmallCard/SmallCard';
 import Search from '../components/forms/Search';
 import "./index.scss";
+import banner from "../assets/kot.png"
 
 const Home = () => {
   const [hotels, setHotels] = useState([]);
@@ -19,8 +20,8 @@ const Home = () => {
   return (
     <>
     
-    <div className="container-fluid bg-dark p-5 text-center">
-      <h1>Hotels</h1>
+    <div className="banner-image">
+      <img src={banner} alt="banner" />
     </div>
     <div className='col search'>
       <br/>

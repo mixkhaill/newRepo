@@ -31,15 +31,15 @@ const DashboardSeller = () => {
       window.location.href = res.data;
     } catch (err) {
       console.log(err);
-      toast.error("Stripe connect failed, Try again.");
+      toast.error("[połączenie ze stripe nie powiodło się, spróbuj ponownie.");
       setLoading(false);
     }
   };
 
   const handleHotelDelete = async (hotelId) => {
-    if (!window.confirm("Are you sure?")) return;
+    if (!window.confirm("Jesteś pewny, że chcesz usunąć to ogłoszenie?")) return;
     deleteHotel(auth.token, hotelId).then((res) => {
-      toast.success("Hotel Deleted");
+      toast.success("ogłoszenie usunięte");
       loadSellersHotels();
     });
   };
@@ -48,11 +48,11 @@ const DashboardSeller = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-10">
-          <h2>Your Hotels</h2>
+          <h2>Twoje ogłoszenia</h2>
         </div>
         <div className="col-md-2">
           <Link to="/hotels/new" className="btn btn-primary">
-            + Add New
+            + dodaj nowe
           </Link>
         </div>
       </div>

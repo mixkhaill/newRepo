@@ -7,7 +7,7 @@ const LoginForm = ({
 }) => (
   <form onSubmit={handleSubmit} className="mt-3">
     <div className="form-group mb-3">
-      <label className="form-label">Email address</label>
+      <label className="form-label">Email</label>
       <input
         type="email"
         className="form-control"
@@ -18,7 +18,7 @@ const LoginForm = ({
     </div>
 
     <div className="form-group mb-3">
-      <label className="form-label">Password</label>
+      <label className="form-label">Hasło</label>
       <input
         type="password"
         className="form-control"

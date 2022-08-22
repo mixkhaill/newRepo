@@ -43,7 +43,7 @@ const NewHotel = () => {
     try{
       let res = await createHotel(token, hotelData);
     console.log('hotel create response', res);
-    toast.success('New hotel is posted');
+    toast.success('Hotel został dodany');
     setTimeout(()=> {
       window.location.reload();
     }, 1000);
@@ -81,8 +81,6 @@ const NewHotel = () => {
           </div>
           <div className="col-md-2">
               <img src={preview} alt="prew-img"  className="img img-fluid m2"/>
-             {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
-             {/* {JSON.stringify(location)} */}
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const TopNav = () => {
 
       {auth !== null && (
         <Link className="nav-link" to="/dashboard">
-          Panel
+          Panel Użytkownika
         </Link>
       )}
 
