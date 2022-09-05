@@ -1,0 +1,7 @@
+@import '../styles/variables.scss';
+
+.dashboard-main .row .col-md-10{
+    h2{
+        color: $color-main-hover;
+    }
+}

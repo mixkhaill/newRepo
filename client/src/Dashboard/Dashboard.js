@@ -1,10 +1,11 @@
-import DashboardNav from "../components/DashboardNav";
-import ConnectNav from "../components/ConnectNav";
+import DashboardNav from "../DashboardNav/DashboardNav";
+import ConnectNav from "../ConnectNav/ConnectNav";
 import { Link } from "react-router-dom";
 import { userHotelBookings } from "../actions/hotel";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import BookingCard from "../components/BookingCard/BookingCard";
+
 
 const Dashboard = () => {
   const {
@@ -24,13 +25,10 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5">
+    <div className="items">
         <ConnectNav />
-      </div>
-
-      <div className="container-fluid p-4">
         <DashboardNav />
-      </div>
+    </div>
 
       <div className="container-fluid">
         <div className="row">

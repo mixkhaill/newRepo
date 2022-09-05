@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import DashboardNav from "../components/DashboardNav";
-import ConnectNav from "../components/ConnectNav";
+import DashboardNav from "../DashboardNav/DashboardNav";
+import ConnectNav from "../ConnectNav/ConnectNav";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { HomeOutlined } from "@ant-design/icons";
@@ -8,6 +8,8 @@ import { createConnectAccount } from "../actions/stripe";
 import { sellerHotels, deleteHotel } from "../actions/hotel";
 import { toast } from "react-toastify";
 import SmallCard from "../components/SmallCard/SmallCard";
+import "./index.scss";
+
 
 const DashboardSeller = () => {
   const { auth } = useSelector((state) => ({ ...state }));
@@ -45,7 +47,7 @@ const DashboardSeller = () => {
   };
 
   const connected = () => (
-    <div className="container-fluid">
+    <div className="container-fluid dashboard-main">
       <div className="row">
         <div className="col-md-10">
           <h2>Twoje ogłoszenia</h2>
@@ -103,13 +105,10 @@ const DashboardSeller = () => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5">
+      <div className="items">
         <ConnectNav />
-      </div>
-
-      <div className="container-fluid p-4">
         <DashboardNav />
-      </div>
+    </div>
 
       {auth &&
       auth.user &&

@@ -1,0 +1,45 @@
+@import '../styles/variables.scss';
+
+.dashboard-nav{
+    padding-top:40px;
+    padding-bottom:40px;
+    display: flex;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left:0;
+    .nav-item {
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+        text-align: center;
+        .nav-link{
+            padding: 14px 20px;
+            color: $color-white;
+            background-color: $color-primary;
+            &.active{
+                color: $color-white;
+                transition: .3s;
+                background-color: $color-main;
+            }
+            &.active:hover{
+                background-color: $color-main;
+            }
+        }
+        .nav-link:hover{
+            color: $color-white;
+            background-color: $color-primary-hover;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .dashboard-nav {
+        justify-content: space-around;
+        .nav-item{
+            width: auto;
+            .nav-link{
+                border-radius: 5px;
+            }
+        }
+    }
+}

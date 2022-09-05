@@ -34,7 +34,7 @@ const TopNav = () => {
     <div className={`main ${navbarOpen ? "open" : ""}`}>
         <FontAwesomeIcon icon={faBars} onClick={handleChange} className="burger"/>
         <FontAwesomeIcon icon={faXmark} onClick={handleChange} className="xmark"/>
-    <div className={`nav d-flex justify-content-between headerNav ${navbarOpen ? "open" : ""}`}>
+    <div className={`nav headerNav ${navbarOpen ? "open" : ""} container`}>
       <Link className="nav-link" to="/">
         Strona główna
       </Link>

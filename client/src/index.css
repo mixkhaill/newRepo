@@ -4,7 +4,7 @@
 
 body{
   font-family: Roboto !important;
-  /* background-color: rgb(35,35,35) !important; */
+  background-color: rgb(35,35,35) !important;
 }
 .pointer {
   cursor: pointer;

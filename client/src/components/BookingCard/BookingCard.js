@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencyFormatter } from "../../actions/stripe";
 import { diffDays } from "../../actions/hotel";
 import { useHistory, Link } from "react-router-dom";
-import OrderModal from "../modals/OrderModal";
+import OrderModal from "../OrderModal/OrderModal";
 
 const BookingCard = ({ hotel, session, orderedBy }) => {
   const [showModal, setShowModal] = useState(false);

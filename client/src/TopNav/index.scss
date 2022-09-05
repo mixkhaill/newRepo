@@ -1,8 +1,6 @@
 @import '../styles/variables.scss';
 
 .main{
-    
-    justify-content: space-between;
     background-color: $color-background;
     z-index: 99;
     .headerNav{
@@ -12,8 +10,16 @@
         line-height: 21px;
         background-color: $color-background;
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
         a{
         color: $color-main;
+        transition: 0.3s;
+        }
+        a:hover{
+        color: $color-main-hover;
         }
     }
     .burger{
@@ -24,6 +30,10 @@
         cursor: pointer;
         position: relative;
         left: 0;
+        transition: 0.3s;
+    }
+    .burger:hover{
+        color: $color-main-hover;
     }
     .xmark{
         display: none;
@@ -34,6 +44,10 @@
         position: relative;
         left: 0;
         z-index: 10;
+        transition: 0.3s;
+    }
+    .xmark:hover{
+        color: $color-main-hover;
     }
 }
 @media screen and (max-width: $breakpoint-m) {

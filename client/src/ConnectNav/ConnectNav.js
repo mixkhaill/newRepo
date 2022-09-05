@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Card, Avatar, Badge } from "antd";
+import { Card, Avatar } from "antd";
 import moment from "moment";
 import {
   getAccountBalance,
@@ -9,9 +9,10 @@ import {
 } from "../actions/stripe";
 import { SettingOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
+import "./index.scss";
+
 
 const { Meta } = Card;
-const { Ribbon } = Badge;
 
 const ConnectNav = () => {
   const [loading, setLoading] = useState(false);
@@ -39,12 +40,12 @@ const ConnectNav = () => {
   };
 
   return (
-    <div className="d-flex justify-content-around">
+    <div className="connect-nav">
       <Card>
         <Meta
           avatar={<Avatar>{user.name[0]}</Avatar>}
           title={user.name}
-          description={`dołączył ${moment(user.createdAt).fromNow(2)} dni temu`}
+          description={`dołączył ${moment(user.createdAt).fromNow()}`}
         />
       </Card>
       {auth &&
@@ -52,7 +53,6 @@ const ConnectNav = () => {
         auth.user.stripe_seller &&
         auth.user.stripe_seller.charges_enabled && (
           <>
-            <Ribbon text="Saldo" color="grey">
               <Card className="bg-light pt-1">
                 {balance &&
                   balance.pending &&
@@ -62,12 +62,9 @@ const ConnectNav = () => {
                     </span>
                   ))}
               </Card>
-            </Ribbon>
-            <Ribbon text="Payouts" color="silver">
               <Card onClick={handlePayoutSettings} className="bg-light pointer">
                 <SettingOutlined className="h5 pt-2" />
               </Card>
-            </Ribbon>
           </>
         )}
     </div>
