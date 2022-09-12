@@ -45,7 +45,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="row">
+      <div className="col m-3 prev-orders">
         {booking.map((b) => (
           <BookingCard
             key={b._id}

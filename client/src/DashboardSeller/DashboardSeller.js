@@ -59,7 +59,7 @@ const DashboardSeller = () => {
         </div>
       </div>
 
-      <div className="row">
+      <div className="col m-2">
         {hotels.map((h) => (
           <SmallCard
             key={h._id}

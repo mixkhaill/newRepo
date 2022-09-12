@@ -11,6 +11,15 @@
         .ant-card-body .ant-card-meta .ant-card-meta-avatar .ant-avatar{
             background-color: gold;
         }
+        .ant-card-body .ant-card-meta .ant-card-meta-detail {
+
+            .ant-card-meta-title{
+                color:white;
+            }
+            .ant-card-meta-description{
+                color: white;
+            }
+        }
     }
     .ant-card:nth-of-type(1){
         text-align: left;
