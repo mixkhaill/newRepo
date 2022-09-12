@@ -24,7 +24,7 @@ const HotelCreateForm = ({
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label className="btn btn-outline-secondary btn-block m-2 text-left">
+        <label className="btn btn-primary m-2">
           Dodaj zdjęcie
           <input
             type="file"
@@ -81,7 +81,7 @@ const HotelCreateForm = ({
         </Select>
       </div>
 
-      <button className="btn btn-outline-primary m-2">Save</button>
+      <button className="btn btn-primary m-2">Save</button>
     </form>
   );
 };

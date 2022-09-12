@@ -87,20 +87,20 @@ const ViewHotel = ({match, history}) => {
         </div>
         <div className="container-fluid view-hotel">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 main-items">
                     <br/>
                     <img src={image} alt={hotel.title} className="img rounded img-fluid m-2 w-100"/>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 main-items">
                     <br/>
-                    <b>{hotel.description}</b>
-                    <p className="alert alert-info mt-3">{hotel.location}</p>
-                    <p className="card-text text-danger">
+                    <p className='card-text'>{hotel.description}</p>
+                    <p className="location">{hotel.location}</p>
+                    <p className="card-text">
                         {currencyFormatter({
                     amount: hotel.price * 100,
                     currency: "pln",
                   })} za dobę</p>
-                <i>Posted by {hotel.postedBy && hotel.postedBy.name}</i>
+                <p className='card-text'>Dodano przez <span className='seller'>{hotel.postedBy && hotel.postedBy.name}</span></p>
                 <p className="type">{hotel.types <=1 ? "pies" : "kot"}</p>
                 <br/>
                 <HotelBookingDate

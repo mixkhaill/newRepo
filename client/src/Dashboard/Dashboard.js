@@ -5,6 +5,8 @@ import { userHotelBookings } from "../actions/hotel";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import BookingCard from "../components/BookingCard/BookingCard";
+import "./index.scss";
+
 
 
 const Dashboard = () => {
@@ -30,7 +32,7 @@ const Dashboard = () => {
         <DashboardNav />
     </div>
 
-      <div className="container-fluid">
+      <div className="dashboard container-fluid">
         <div className="row">
           <div className="col-md-10">
             <h2>Twoje zamówienia</h2>

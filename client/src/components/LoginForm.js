@@ -1,17 +1,19 @@
+import "./index.scss";
+
 const LoginForm = ({
   handleSubmit,
-  email,
+  email, 
   setEmail,
   password,
   setPassword,
 }) => (
-  <form onSubmit={handleSubmit} className="mt-3">
+  <form onSubmit={handleSubmit} className="mt-3 form">
     <div className="form-group mb-3">
       <label className="form-label">Email</label>
       <input
         type="email"
         className="form-control"
-        placeholder="Enter email"
+        placeholder="Podaj email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -22,14 +24,14 @@ const LoginForm = ({
       <input
         type="password"
         className="form-control"
-        placeholder="Enter password"
+        placeholder="Podaj hasło"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
     </div>
 
     <button disabled={!email || !password} className="btn btn-primary">
-      Submit
+      Potwierdź
     </button>
   </form>
 );

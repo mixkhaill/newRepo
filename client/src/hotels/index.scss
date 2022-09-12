@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+.form-group{
+    overflow-x: hidden;
+}
+.image-prev{
+    position: relative;
+    overflow: hidden;
+    img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

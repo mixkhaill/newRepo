@@ -4,6 +4,8 @@ import {Select} from 'antd'
 import {read, updateHotel} from '../actions/hotel'
 import {useSelector} from 'react-redux'
 import HotelEditForm from '../components/forms/HotelEditForm'
+import "./index.scss";
+
 
 const {Option} = Select;
 
@@ -74,7 +76,6 @@ const EditHotel = ({match}) => {
         </div>
         <div className="container-fluid">
             <div className="row">
-                <div className="row">
                     <HotelEditForm
                     values={values}
                     setValues={setValues}
@@ -83,10 +84,7 @@ const EditHotel = ({match}) => {
                     handleSubmit={handleSubmit}
                     />
                 </div>
-                <div className="row">
-                </div>
             </div>
-        </div>
         </>
     );
 };

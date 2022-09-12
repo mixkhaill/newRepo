@@ -1,0 +1,17 @@
+@import '../styles/variables.scss';
+
+.form{ 
+    padding-bottom: 50px;
+    .form-group.mb-3 {
+        
+        .form-label{
+                color: $color-main-hover;
+                font-weight: bold;
+                font-size: 18px;
+            }
+        .form-control{
+            font-size: 18px;
+        }
+        
+    }
+}

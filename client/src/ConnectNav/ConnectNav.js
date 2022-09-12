@@ -53,7 +53,7 @@ const ConnectNav = () => {
         auth.user.stripe_seller &&
         auth.user.stripe_seller.charges_enabled && (
           <>
-              <Card className="bg-light pt-1">
+              <Card>
                 {balance &&
                   balance.pending &&
                   balance.pending.map((bp, i) => (
@@ -62,7 +62,7 @@ const ConnectNav = () => {
                     </span>
                   ))}
               </Card>
-              <Card onClick={handlePayoutSettings} className="bg-light pointer">
+              <Card onClick={handlePayoutSettings} className="pointer">
                 <SettingOutlined className="h5 pt-2" />
               </Card>
           </>

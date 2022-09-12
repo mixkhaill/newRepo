@@ -4,6 +4,8 @@ import {DatePicker, Select} from 'antd'
 import {createHotel} from '../actions/hotel'
 import {useSelector} from 'react-redux'
 import HotelCreateForm from "../components/forms/HotelCreateForm";
+import "./index.scss";
+
 
 
 const {Option} = Select;
@@ -63,12 +65,14 @@ const NewHotel = () => {
 
   return (
     <>
-    <div className="container-fluid bg-secondary p-5 text-center">
-      <h2>add Hotel</h2>
-      </div>
+    <div className="image-prev">
+        <img 
+        src={preview} 
+        alt="prew-img"  
+        />
+        </div>
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-10">
+          <div className="row">
           <HotelCreateForm
               values={values}
               setValues={setValues}
@@ -79,10 +83,6 @@ const NewHotel = () => {
               setLocation={setLocation}
             />
           </div>
-          <div className="col-md-2">
-              <img src={preview} alt="prew-img"  className="img img-fluid m2"/>
-          </div>
-        </div>
       </div>
     </>
   );

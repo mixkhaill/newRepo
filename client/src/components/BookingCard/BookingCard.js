@@ -3,6 +3,8 @@ import { currencyFormatter } from "../../actions/stripe";
 import { diffDays } from "../../actions/hotel";
 import { useHistory, Link } from "react-router-dom";
 import OrderModal from "../OrderModal/OrderModal";
+import "./index.scss";
+
 
 const BookingCard = ({ hotel, session, orderedBy }) => {
   const [showModal, setShowModal] = useState(false);
@@ -10,25 +12,25 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
   const history = useHistory();
   return (
     <>
-      <div className="card mb-3">
+      <div className="card mb-4 booking-card">
         <div className="row no-gutters">
-          <div className="col-md-4">
+          <div className="col-md-4 img-col">
             {hotel.image && hotel.image.contentType ? (
               <img
                 src={`${process.env.REACT_APP_API}/hotel/image/${hotel._id}`}
                 alt="default hotel image"
-                className="card-image img img-fluid"
+                className="card-image img img-fluid image"
               />
             ) : (
               <img
                 src="https://via.placeholder.com/900x500.png?text=MERN+Booking"
                 alt="default hotel image"
-                className="card-image img img-fluid"
+                className="card-image img img-fluid image"
               />
             )}
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
+          <div className="col">
+            <div className="card-body main-items">
               <h3 className="card-title">
                 {hotel.title}{" "}
                 <span className="float-right text-primary">
@@ -38,7 +40,7 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
                   })}
                 </span>{" "}
               </h3>
-              <p className="alert alert-info">{hotel.location}</p>
+              <p className="location">{hotel.location}</p>
               <p className="card-text">{`${hotel.description.substring(
                 0,
                 200
@@ -49,7 +51,7 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
                   {diffDays(hotel.from, hotel.to) <= 1 ? " dzień" : " dni"}
                 </span>
               </p>
-              <p className="card-text">{hotel.types <= 1 ? "pies" : "kot"} </p>
+              <p className="type">{hotel.types <= 1 ? "pies" : "kot"} </p>
               <p className="card-text">
                 od {new Date(hotel.from).toLocaleDateString()}
               </p>
@@ -71,7 +73,7 @@ const BookingCard = ({ hotel, session, orderedBy }) => {
                   onClick={() => setShowModal(!showModal)}
                   className="btn btn-primary"
                 >
-                  Show Payment info
+                  Pokaż więcej
                 </button>
               </div>
             </div>

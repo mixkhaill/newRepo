@@ -3,6 +3,8 @@ import RegisterForm from "../components/RegisterForm";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { register } from "../actions/auth";
+import banner from "../assets/kot.png"
+
 
 const Register = ({ history }) => {
   const [name, setName] = useState("");
@@ -28,9 +30,9 @@ const Register = ({ history }) => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5 text-center">
-        <h1>Register</h1>
-      </div>
+    <div className="banner-image">
+      <img src={banner} alt="banner" />
+    </div>
 
       <div className="container">
         <div className="row">

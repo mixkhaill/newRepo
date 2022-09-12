@@ -3,6 +3,8 @@ import { toast } from "react-toastify";
 import { login } from "../actions/auth";
 import LoginForm from "../components/LoginForm";
 import { useDispatch } from "react-redux";
+import banner from "../assets/kot.png"
+
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -35,9 +37,9 @@ const Login = ({ history }) => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5 text-center">
-        <h1>Login</h1>
-      </div>
+    <div className="banner-image">
+      <img src={banner} alt="banner" />
+    </div>
 
       <div className="container">
         <div className="row">
