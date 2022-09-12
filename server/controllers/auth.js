@@ -29,7 +29,6 @@ export const login = async (req, res) => {
     let user = await User.findOne({ email }).exec();
     if (!user) res.status(400).send("Nie znaleziono użytkownika z takim adresem email");
     user.comparePassword(password, (err, match) => {
-      console.log("COMPARE PASSWORD IN LOGIN ERR", err);
       if (!match || err) return res.status(400).send("hasło nieprawidłowe");
       let token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
         expiresIn: "7d",

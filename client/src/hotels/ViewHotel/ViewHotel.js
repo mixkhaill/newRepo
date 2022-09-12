@@ -93,13 +93,13 @@ const ViewHotel = ({match, history}) => {
                 </div>
                 <div className="col-md-6 main-items">
                     <br/>
-                    <p className='card-text'>{hotel.description}</p>
+                    <p className='card-text description'>{hotel.description}</p>
                     <p className="location">{hotel.location}</p>
                     <p className="card-text">
-                        {currencyFormatter({
+                        <span className="currency">{currencyFormatter({
                     amount: hotel.price * 100,
                     currency: "pln",
-                  })} za dobę</p>
+                  })}</span> za dobę</p>
                 <p className='card-text'>Dodano przez <span className='seller'>{hotel.postedBy && hotel.postedBy.name}</span></p>
                 <p className="type">{hotel.types <=1 ? "pies" : "kot"}</p>
                 <br/>

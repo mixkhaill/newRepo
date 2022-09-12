@@ -6,6 +6,11 @@
     .row .main-items {
         .card-text{
             color: white;
+            font-size: 24px;
+            .currency{
+                color: $color-main;
+                font-weight: bold;
+            }
         }
         .location{
             font-size: 24px;

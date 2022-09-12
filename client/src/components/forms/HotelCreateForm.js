@@ -81,7 +81,7 @@ const HotelCreateForm = ({
         </Select>
       </div>
 
-      <button className="btn btn-primary m-2">Save</button>
+      <button className="btn btn-primary m-2">Dodaj</button>
     </form>
   );
 };
