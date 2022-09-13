@@ -66,7 +66,7 @@ export const read = async(req,res) => {
     .populate("postedBy", "_id name")
     .select('-image.data')
     .exec();
-    console.log('single hotel', hotel);
+    console.log('hotel', hotel);
     res.json(hotel);
 }
 export const update = async (req, res) => {
@@ -90,7 +90,7 @@ export const update = async (req, res) => {
         res.json(updated);
     } catch(err) {
         console.log(err)
-        res.status(400).send('hotel updated failed')
+        res.status(400).send('nie udało się edytować')
     }
 }
 export const userHotelBookings = async (req, res) => {
