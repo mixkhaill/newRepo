@@ -19,6 +19,13 @@ const DashboardNav = () => {
           Twoje ogłoszenia
         </Link>
       </li>
+      <li className="nav-item">
+        <Link
+          className={`nav-link ${active === "/dashboard/keepers" && "active"}`}
+          to="/dashboard/keepers">
+          Twoi opiekunowie
+        </Link>
+      </li>
     </ul>
   );
 };

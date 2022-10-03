@@ -10,9 +10,14 @@ import moment from 'moment'
 import HotelBookingDate from '../../components/forms/HotelBookingDate'
 import dog from "../../assets/dog.jpg"
 import cat from "../../assets/cat.jpg"
+import { Select } from "antd";
+
+
 
 import "./index.scss"
 
+
+const { Option } = Select;
 
 const ViewHotel = ({match, history}) => {
     const [hotel,setHotel] = useState({});
@@ -103,6 +108,60 @@ const ViewHotel = ({match, history}) => {
                 <p className='card-text'>Dodano przez <span className='seller'>{hotel.postedBy && hotel.postedBy.name}</span></p>
                 <p className="type">{hotel.types <=1 ? "pies" : "kot"}</p>
                 <br/>
+                <input
+                type="text"
+                name="title"
+                placeholder="imie zwierzęcia"
+                className="form-control m-2"
+                />
+                <input
+                type="number"
+                name="wiek"
+                placeholder="wiek zwierzęcia"
+                className="form-control m-2"
+                />
+                <Select
+                className="w-100 m-2"
+                size="large"
+                placeholder="rodzaj karmy"
+                >
+                <Option key={1}>mokra</Option>
+                <Option key={2}>sucha</Option>
+                </Select>
+                <input
+                type="number"
+                name="title"
+                placeholder="godzina pierwszego posiłku"
+                className="form-control m-2"
+                />
+                <input
+                type="number"
+                name="title"
+                placeholder="godzina drugiego posiłku"
+                className="form-control m-2"
+                />
+                <input
+                type="number"
+                name="title"
+                placeholder="godzina trzeciego posiłku"
+                className="form-control m-2"
+                />
+                <input
+                type="number"
+                name="title"
+                placeholder="godzina czwartego posiłku"
+                className="form-control m-2"
+                />
+                <Select
+                className="w-100 m-2"
+                size="large"
+                placeholder="badania medyczne"
+                >
+                <Option key={1}>tak</Option>
+                <Option key={2}>nie</Option>
+                </Select>
+
+                
                 <HotelBookingDate
                     values={values}
                     setValues={setValues}

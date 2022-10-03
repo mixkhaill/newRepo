@@ -8,6 +8,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Dashboard from "./Dashboard/Dashboard";
 import DashboardSeller from "./DashboardSeller/DashboardSeller";
+import DashboardKeeper from "./DashboardKeeper/DashboardKeeper";
 import NewHotel from "./hotels/NewHotel";
 import StripeCallback from "./stripe/StripeCallback";
 import EditHotel from "./hotels/EditHotel";
@@ -30,6 +31,11 @@ function App() {
           exact
           path="/dashboard/seller"
           component={DashboardSeller}
+        />
+        <PrivateRoute
+          exact
+          path="/dashboard/keepers"
+          component={DashboardKeeper}
         />
         <PrivateRoute exact path="/hotels/new" component={NewHotel} />
         <PrivateRoute

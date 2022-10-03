@@ -1,0 +1,30 @@
+@import '../styles/variables.scss';
+
+.dashboard-main{
+    .row 
+    {
+        .col-md-10{
+            h2{
+                color: $color-main-hover;
+            }
+        }
+        .col-md-6 .p-5 {
+            .h1{
+                color: $color-main-hover;
+            }
+            h4{
+                color: $color-main-hover;
+            }
+        }
+    }
+    .keepers {
+        .text-danger{
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        h1{
+            cursor: pointer;
+            color: gold; 
+        }
+    }
+} 

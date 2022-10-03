@@ -83,7 +83,6 @@ const HotelEditForm = ({
           <Option key={2}>kot</Option>
         </Select>
       </div>
-      
       <button className="btn btn-primary m-2">Zapisz</button>
     </form>
   );

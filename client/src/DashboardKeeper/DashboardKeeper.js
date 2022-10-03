@@ -7,15 +7,19 @@ import { DollarCircleOutlined } from "@ant-design/icons";
 import { createConnectAccount } from "../actions/stripe";
 import { sellerHotels, deleteHotel } from "../actions/hotel";
 import { toast } from "react-toastify";
-import SmallCard from "../components/SmallCard/SmallCard";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import AddKeeper from "../components/addKeeper/AddKeeper";
+import KeeperModal from "../components/KeeperModal/KeeperModal";
 import "./index.scss";
 
 
-const DashboardSeller = () => {
+const DashboardKeeper = () => {
   const { auth } = useSelector((state) => ({ ...state }));
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const tab = ['Krzysztof', 'Anna', 'Bartosz', 'Dawid', 'Aleksandra'];
 
   useEffect(() => {
     loadSellersHotels();
@@ -51,35 +55,42 @@ const DashboardSeller = () => {
     <div className="container-fluid dashboard-main">
       <div className="row">
         <div className="col-md-10">
-          <h2>Twoje ogłoszenia</h2>
+          <h2>Twoi opiekunowie</h2>
         </div>
         <div className="col-md-2">
-          <Link to="/hotels/new" className="btn btn-primary">
+          {/* <Link to="/hotels/new" className="btn btn-primary">
             + dodaj nowe
-          </Link>
-          {/* <button className="btn btn-primary"  onClick={() => setShowModal(!showModal)}>
+          </Link> */}
+          <button className="btn btn-primary"  onClick={() => setShowModal(!showModal)}>
             + dodaj opiekuna
-          </button> */}
+          </button>
         </div>
-            {/* {showModal && (
+            {showModal && (
                 <AddKeeper
                   showModal={showModal}
                   setShowModal={setShowModal}
                 />
-              )} */}
+              )}
       </div>
 
-      <div className="col m-2">
-        {hotels.map((h) => (
-          <SmallCard
-            key={h._id}
-            h={h}
-            showViewMoreButton={false}
-            owner={true}
-            handleHotelDelete={handleHotelDelete}
-          />
-        ))}
+      <div className="col m-2 keepers">
+        {tab.map((item, i) => {
+          return(
+          <div className="d-flex justify-content-between w-100">
+            <h1 onClick={() => setShowModal2(!showModal2)}>{item}</h1>
+            <DeleteOutlined
+              className="text-danger delete"
+            />
+            </div>
+          )
+        })}
       </div>
+      {showModal2 && (
+        <KeeperModal
+          showModal2={showModal2}
+          setShowModal2={setShowModal2}
+        />
+      )}
     </div>
   );
 
@@ -121,4 +132,4 @@ const DashboardSeller = () => {
   );
 };
 
-export default DashboardSeller;
+export default DashboardKeeper;
