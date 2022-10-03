@@ -2,8 +2,6 @@ import {Modal} from "antd";
 
 const OrderModal = ({session, orderedBy, showModal, setShowModal}) => {
 
-    const table = ['Krzysztof', 'Anna', 'Bartosz', 'Dawid', 'Aleksandra'];
-    const tab = table[Math.floor(Math.random()* table.length)];
     return (
         <Modal 
         visible={showModal} 
@@ -15,11 +13,11 @@ const OrderModal = ({session, orderedBy, showModal, setShowModal}) => {
             <p>Imię zwierzęcia: Filemon</p>
             <p>rodzaj: kot</p>
             <p>Opiekun: {tab}</p>
-            <p>posilek 1: godzina: 8, karma mokra</p>
-            <p>posilek 2: godzina: 12, karma mokra</p>
-            <p>posilek 3: godzina: 16, karma mokra</p>
-            <p>posilek 4: godzina: 20, karma mokra</p>
-            <p>badania lekarskie: nie</p>
+            <p>posilek 1: </p>
+            <p>posilek 2: </p>
+            <p>posilek 3: </p>
+            <p>posilek 4: </p>
+            <p>badania lekarskie: </p>
         </Modal>
         )
 };

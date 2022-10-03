@@ -8,9 +8,6 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 
-
-
-
 const TopNav = () => {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => ({ ...state }));
